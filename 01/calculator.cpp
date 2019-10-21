@@ -62,7 +62,7 @@ int Calculator::calc_sum()
     return mul;
 }
 
-int Calculator::calculate(std::string str)
+int Calculator::calculate(const std::string& str)
 {
     lexer = Lexer(str);
     lex = lexer.get_next_lex();

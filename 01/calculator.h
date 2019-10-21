@@ -7,7 +7,7 @@ class Calculator
 {
 public:
     Calculator();
-    int calculate(std::string str);
+    int calculate(const std::string& str);
 private:
     int calc_sum();
     int calc_mul();

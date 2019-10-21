@@ -27,7 +27,7 @@ struct Lexeme
 class Lexer
 {
 public:
-    Lexer(std::string str);
+    Lexer(const std::string& str);
     Lexeme get_next_lex();
 private:
     bool process_sym(char c);

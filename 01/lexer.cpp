@@ -3,7 +3,7 @@
 #include <stdexcept>
 #include "lexer.h"
 
-Lexer::Lexer(std::string str)
+Lexer::Lexer(const std::string& str)
     : str(str)
     , str_ind(0)
     , read_digit(false)
