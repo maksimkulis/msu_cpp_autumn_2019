@@ -10,7 +10,7 @@ int main(int argc, char** argv)
     }
     try {
         std::cout << Calculator().calculate(argv[1]) << std::endl;
-    } catch(std::runtime_error & err) {
+    } catch (std::runtime_error & err) {
         std::cout << err.what() << std::endl;
         return -1;
     }

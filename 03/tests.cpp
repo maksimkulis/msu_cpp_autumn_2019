@@ -51,16 +51,16 @@ int main()
     size_t catched = 0;
     try {
         m1[MATRROW + 1][MATRCOL - 1];
-    } catch (std::out_of_range) {
+    } catch (std::out_of_range& err) {
         catched++;
     }
 
     try {
         m1[MATRROW - 1][MATRCOL + 1];
-    } catch (std::out_of_range) {
+    } catch (std::out_of_range& err) {
         catched++;
     }
-    
+
     if (catched != 2) {
         std::cout << "Test7 false\n";
     }
