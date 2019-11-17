@@ -9,4 +9,4 @@ test: tests
 	@./tests
 
 clean: tests
-	@rm *.o tests
+	@rm tests
