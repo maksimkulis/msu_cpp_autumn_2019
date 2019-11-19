@@ -19,7 +19,7 @@ void unpacking(std::stringstream& stream, std::vector<std::string>& vec)
 }
 
 template<class T>
-void unpacking(std::stringstream& stream, std::vector<std::string>& vec, T arg)
+void unpacking(std::stringstream& stream, std::vector<std::string>& vec, T&& arg)
 {
     stream << arg;
     vec.push_back(stream.str());
@@ -27,7 +27,7 @@ void unpacking(std::stringstream& stream, std::vector<std::string>& vec, T arg)
 }
 
 template<class T, class... Args>
-void unpacking(std::stringstream& stream, std::vector<std::string>& vec, T arg, Args... args)
+void unpacking(std::stringstream& stream, std::vector<std::string>& vec, T&& arg, Args&&... args)
 {
     stream << arg;
     vec.push_back(stream.str());
@@ -36,7 +36,7 @@ void unpacking(std::stringstream& stream, std::vector<std::string>& vec, T arg, 
 }
 
 template<class... Args>
-std::string format(const std::string str, Args... args)
+std::string format(const std::string& str, Args&&... args)
 {
     std::vector<std::string> vec;
     std::stringstream stream;
