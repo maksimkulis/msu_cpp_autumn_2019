@@ -5,6 +5,7 @@
 #include <stdexcept> //runtime_error
 #include <cctype> //isdigit
 #include <vector> //vector
+#include <utility> //std::forward
 
 
 enum status {
@@ -32,7 +33,7 @@ void unpacking(std::stringstream& stream, std::vector<std::string>& vec, T&& arg
     stream << arg;
     vec.push_back(stream.str());
     stream.str("");
-    unpacking(stream, vec, args...);
+    unpacking(stream, vec, std::forward<Args>(args)...);
 }
 
 template<class... Args>
@@ -40,7 +41,7 @@ std::string format(const std::string& str, Args&&... args)
 {
     std::vector<std::string> vec;
     std::stringstream stream;
-    unpacking(stream, vec, args...);
+    unpacking(stream, vec, std::forward<Args>(args)...);
 
     auto st = status::CHAR;
     size_t index = 0;
